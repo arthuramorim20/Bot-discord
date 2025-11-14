@@ -1,6 +1,8 @@
+import { BaseCommand } from "@/commands/BaseCommands";
 import {
   BitFieldResolvable,
   Client,
+  Collection,
   GatewayIntentsString,
   IntentsBitField,
   Partials,
@@ -9,6 +11,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 export class ExtendedClient extends Client {
+  public commands: Collection<string, BaseCommand> = new Collection();
   constructor() {
     super({
       intents: Object.keys(IntentsBitField.Flags) as BitFieldResolvable<

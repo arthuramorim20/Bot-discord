@@ -5,5 +5,5 @@ export type TResult<T> =
     }
   | {
       data: null;
-      error: null;
+      error: error;
     };
